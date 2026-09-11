@@ -1,0 +1,222 @@
+[
+  {
+    "id": "SEG-001",
+    "nome": "Carlos Eduardo Silva",
+    "email": "carlos.silva@exemplo.com.br",
+    "telefone": "(11) 98765-4321",
+    "cidade": "São Paulo",
+    "estado": "SP",
+    "bairro": "Vila Madalena",
+    "latitude": -23.5505,
+    "longitude": -46.6333,
+    "canal_preferencial": "WhatsApp",
+    "apolices": [
+      {
+        "id": "APO-1001",
+        "tipo_ramo": "Auto",
+        "descricao_bem": "Toyota Corolla Altis 2023",
+        "coberturas": ["Colisão", "Granizo", "Alagamento", "Roubo/Furto"],
+        "franquia_reais": 3500.0,
+        "valor_assegurado_reais": 165000.0,
+        "vigencia_fim": "2027-05-20"
+      },
+      {
+        "id": "APO-1002",
+        "tipo_ramo": "Residencial",
+        "descricao_bem": "Casa Térrea com Jardim",
+        "coberturas": ["Incêndio", "Danos Elétricos", "Alagamento", "Vendaval"],
+        "franquia_reais": 1500.0,
+        "valor_assegurado_reais": 650000.0,
+        "vigencia_fim": "2027-11-15"
+      }
+    ]
+  },
+  {
+    "id": "SEG-002",
+    "nome": "Mariana Oliveira Santos",
+    "email": "mariana.santos@exemplo.com.br",
+    "telefone": "(41) 99123-8899",
+    "cidade": "Curitiba",
+    "estado": "PR",
+    "bairro": "Batel",
+    "latitude": -25.4284,
+    "longitude": -49.2733,
+    "canal_preferencial": "WhatsApp",
+    "apolices": [
+      {
+        "id": "APO-1003",
+        "tipo_ramo": "Auto",
+        "descricao_bem": "Jeep Compass Longitude 2024",
+        "coberturas": ["Colisão", "Granizo", "Alagamento", "Vidros"],
+        "franquia_reais": 4200.0,
+        "valor_assegurado_reais": 190000.0,
+        "vigencia_fim": "2027-08-10"
+      }
+    ]
+  },
+  {
+    "id": "SEG-003",
+    "nome": "Roberto Alencar Mendonça",
+    "email": "roberto.mendonca@agrofazenda.com.br",
+    "telefone": "(51) 98111-2233",
+    "cidade": "Porto Alegre",
+    "estado": "RS",
+    "bairro": "Zona Rural Sul",
+    "latitude": -30.0346,
+    "longitude": -51.2177,
+    "canal_preferencial": "SMS",
+    "apolices": [
+      {
+        "id": "APO-1004",
+        "tipo_ramo": "Agro",
+        "descricao_bem": "Lavoura de Trigo e Pomar de Maçãs (50 ha)",
+        "coberturas": ["Geada", "Granizo", "Seca", "Vendaval"],
+        "franquia_reais": 15000.0,
+        "valor_assegurado_reais": 850000.0,
+        "vigencia_fim": "2027-09-30"
+      }
+    ]
+  },
+  {
+    "id": "SEG-004",
+    "nome": "Juliana Ferreira Lima",
+    "email": "juliana.lima@comercioabc.com.br",
+    "telefone": "(21) 97654-1122",
+    "cidade": "Rio de Janeiro",
+    "estado": "RJ",
+    "bairro": "Barra da Tijuca",
+    "latitude": -22.9068,
+    "longitude": -43.1729,
+    "canal_preferencial": "Push Notification",
+    "apolices": [
+      {
+        "id": "APO-1005",
+        "tipo_ramo": "Empresarial",
+        "descricao_bem": "Galpão Logístico e Estoque de Eletrônicos",
+        "coberturas": ["Vendaval", "Destelhamento", "Danos Elétricos", "Inundação"],
+        "franquia_reais": 8000.0,
+        "valor_assegurado_reais": 1200000.0,
+        "vigencia_fim": "2027-12-01"
+      },
+      {
+        "id": "APO-1006",
+        "tipo_ramo": "Auto",
+        "descricao_bem": "Honda HR-V 2022",
+        "coberturas": ["Colisão", "Alagamento", "Roubo/Furto"],
+        "franquia_reais": 3000.0,
+        "valor_assegurado_reais": 130000.0,
+        "vigencia_fim": "2027-04-18"
+      }
+    ]
+  },
+  {
+    "id": "SEG-005",
+    "nome": "Fernando Henrique Castro",
+    "email": "fernando.castro@exemplo.com.br",
+    "telefone": "(31) 98844-5566",
+    "cidade": "Belo Horizonte",
+    "estado": "MG",
+    "bairro": "Savassi",
+    "latitude": -19.9167,
+    "longitude": -43.9345,
+    "canal_preferencial": "WhatsApp",
+    "apolices": [
+      {
+        "id": "APO-1007",
+        "tipo_ramo": "Residencial",
+        "descricao_bem": "Apartamento Cobertura Duplex",
+        "coberturas": ["Danos Elétricos", "Vendaval", "Granizo", "Incêndio"],
+        "franquia_reais": 2000.0,
+        "valor_assegurado_reais": 950000.0,
+        "vigencia_fim": "2027-06-12"
+      }
+    ]
+  },
+  {
+    "id": "SEG-006",
+    "nome": "Patrícia Souza Magalhães",
+    "email": "patricia.souza@exemplo.com.br",
+    "telefone": "(71) 99233-4455",
+    "cidade": "Salvador",
+    "estado": "BA",
+    "bairro": "Pituba",
+    "latitude": -12.9777,
+    "longitude": -38.5016,
+    "canal_preferencial": "E-mail",
+    "apolices": [
+      {
+        "id": "APO-1008",
+        "tipo_ramo": "Residencial",
+        "descricao_bem": "Casa de Praia Beira-Mar",
+        "coberturas": ["Ressaca Marítima", "Vendaval", "Destelhamento", "Alagamento"],
+        "franquia_reais": 2500.0,
+        "valor_assegurado_reais": 780000.0,
+        "vigencia_fim": "2027-07-22"
+      }
+    ]
+  },
+  {
+    "id": "SEG-007",
+    "nome": "Lucas Gabriel Ribeiro",
+    "email": "lucas.ribeiro@agrocafe.com.br",
+    "telefone": "(16) 99777-6655",
+    "cidade": "Ribeirão Preto",
+    "estado": "SP",
+    "bairro": "Distrito Rural",
+    "latitude": -21.1704,
+    "longitude": -47.8103,
+    "canal_preferencial": "WhatsApp",
+    "apolices": [
+      {
+        "id": "APO-1009",
+        "tipo_ramo": "Agro",
+        "descricao_bem": "Fazenda de Café e Maquinário Agrícola",
+        "coberturas": ["Granizo", "Geada", "Incêndio Florestal", "Vendaval"],
+        "franquia_reais": 12000.0,
+        "valor_assegurado_reais": 1400000.0,
+        "vigencia_fim": "2027-10-10"
+      },
+      {
+        "id": "APO-1010",
+        "tipo_ramo": "Auto",
+        "descricao_bem": "Camionete Toyota Hilux 4x4",
+        "coberturas": ["Colisão", "Alagamento", "Granizo", "Incêndio"],
+        "franquia_reais": 6000.0,
+        "valor_assegurado_reais": 260000.0,
+        "vigencia_fim": "2027-03-30"
+      }
+    ]
+  },
+  {
+    "id": "SEG-008",
+    "nome": "Beatriz Martins Vasconcelos",
+    "email": "beatriz.martins@exemplo.com.br",
+    "telefone": "(48) 99655-3322",
+    "cidade": "Florianópolis",
+    "estado": "SC",
+    "bairro": "Jurerê Internacional",
+    "latitude": -27.5954,
+    "longitude": -48.5480,
+    "canal_preferencial": "WhatsApp",
+    "apolices": [
+      {
+        "id": "APO-1011",
+        "tipo_ramo": "Auto",
+        "descricao_bem": "BMW X1 sDrive 2023",
+        "coberturas": ["Colisão", "Granizo", "Alagamento", "Danos por Vento"],
+        "franquia_reais": 5000.0,
+        "valor_assegurado_reais": 280000.0,
+        "vigencia_fim": "2027-05-15"
+      },
+      {
+        "id": "APO-1012",
+        "tipo_ramo": "Residencial",
+        "descricao_bem": "Residência de Alto Padrão",
+        "coberturas": ["Vendaval", "Granizo", "Danos Elétricos", "Alagamento"],
+        "franquia_reais": 3500.0,
+        "valor_assegurado_reais": 1500000.0,
+        "vigencia_fim": "2027-12-31"
+      }
+    ]
+  }
+]

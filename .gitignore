@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+
+# Variáveis de ambiente
+.env
+
+# Testes e Cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Arquivos temporários
+*.log
+scratch/
+/docs
