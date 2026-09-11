@@ -20,6 +20,7 @@ ITENS_INCLUIR = [
     "package_submission.py",
     "relatorio_tecnico.md",
     "relatorio_tecnico.pdf",
+    "GUIA_OPERACAO_WEB.md",
     "requirements.txt",
     "README.md",
     "LICENSE",

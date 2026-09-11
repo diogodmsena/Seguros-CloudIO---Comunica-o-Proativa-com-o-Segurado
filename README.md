@@ -184,6 +184,7 @@ Desafio 5/
 ├── package_submission.py          # Script gerador do ZIP de entrega
 ├── relatorio_tecnico.md           # Relatório técnico completo formatado
 ├── relatorio_tecnico.pdf          # Relatório técnico compilado
+├── GUIA_OPERACAO_WEB.md           # Manual de operação passo a passo da interface web
 ├── requirements.txt               # Dependências do projeto
 ├── .env.example                   # Exemplo de variáveis de ambiente
 ├── LICENSE                        # Licença MIT
