@@ -2,8 +2,15 @@
 
 **Desafio 5 - Instituto de Inteligência Artificial Aplicada (I2A2)**  
 **Projeto:** Seguros CloudIO  
-**Data:** Agosto / 2026  
+**Data:** Setembro / 2026  
 **Licença:** MIT  
+
+**Integrantes:**
+
+ - Isabel de Castro Beneyto - (85) 98630-5456 - castrobeneyto@gmail.com
+ - Adolfo Emmanuel Correa López - (21) 97240-9801 - adolfo.correa.lopez@gmail.com
+ - Jessica Mayumi Odo Bastos - (11) 95216-6175 - jessica.odo03@gmail.com
+ - Diogo David Macêdo Sena - (84) 99982-4141 - diogodmsena@gmail.com
 
 ---
 

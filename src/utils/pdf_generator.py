@@ -7,7 +7,37 @@ import os
 import re
 from pathlib import Path
 from fpdf import FPDF
-from src.config import RELATORIO_PDF
+from src.config import RELATORIO_PDF, RELATORIO_MD
+
+
+def obter_integrantes(caminho_md: Path = RELATORIO_MD) -> list[tuple[str, str, str]]:
+    """Extrai a lista de integrantes a partir de relatorio_tecnico.md ou retorna os dados padrão."""
+    integrantes_padrao = [
+        ("Isabel de Castro Beneyto", "(85) 98630-5456", "castrobeneyto@gmail.com"),
+        ("Adolfo Emmanuel Correa López", "(21) 97240-9801", "adolfo.correa.lopez@gmail.com"),
+        ("Jessica Mayumi Odo Bastos", "(11) 95216-6175", "jessica.odo03@gmail.com"),
+        ("Diogo David Macêdo Sena", "(84) 99982-4141", "diogodmsena@gmail.com"),
+    ]
+    if not caminho_md.exists():
+        return integrantes_padrao
+
+    try:
+        conteudo = caminho_md.read_text(encoding="utf-8")
+        match = re.search(r"\*\*Integrantes:\*\*(.*?)(?:---|\n##|\Z)", conteudo, re.DOTALL)
+        if not match:
+            return integrantes_padrao
+
+        linhas = [l.strip() for l in match.group(1).strip().splitlines() if l.strip()]
+        resultado = []
+        for linha in linhas:
+            linha_limpa = linha.lstrip("-*• ").strip()
+            partes = [p.strip() for p in linha_limpa.split(" - ")]
+            if len(partes) >= 3:
+                resultado.append((partes[0], partes[1], partes[2]))
+
+        return resultado if resultado else integrantes_padrao
+    except Exception:
+        return integrantes_padrao
 
 
 def sanitizar_texto_latin1(texto: str) -> str:
@@ -97,16 +127,51 @@ def gerar_pdf_relatorio(caminho_saida: Path = RELATORIO_PDF) -> Path:
     pdf.set_auto_page_break(auto=True, margin=18)
 
     # Título Principal
-    pdf.set_font("Helvetica", "B", 18)
+    pdf.set_font("Helvetica", "B", 17)
     pdf.set_text_color(15, 23, 42)
-    pdf.cell(0, 10, sanitizar_texto_latin1("Relatório Técnico da Solução"), 0, 1, 'C')
-    pdf.set_font("Helvetica", "B", 12)
+    pdf.cell(0, 9, sanitizar_texto_latin1("Relatório Técnico da Solução"), 0, 1, 'C')
+    pdf.set_font("Helvetica", "B", 11)
     pdf.set_text_color(3, 105, 161)
-    pdf.cell(0, 6, sanitizar_texto_latin1("Ferramenta Inteligente para Comunicação Proativa com o Segurado"), 0, 1, 'C')
-    pdf.set_font("Helvetica", "I", 9)
+    pdf.cell(0, 5, sanitizar_texto_latin1("Ferramenta Inteligente para Comunicação Proativa com o Segurado"), 0, 1, 'C')
+    pdf.set_font("Helvetica", "", 8.5)
     pdf.set_text_color(100, 116, 139)
-    pdf.cell(0, 6, sanitizar_texto_latin1("Equipe: Seguros CloudIO | Data: Agosto/2026 | Licença: MIT"), 0, 1, 'C')
-    pdf.ln(5)
+    pdf.cell(0, 4.5, sanitizar_texto_latin1("Desafio 5 - Instituto de Inteligência Artificial Aplicada (I2A2) | Projeto: Seguros CloudIO"), 0, 1, 'C')
+    pdf.set_font("Helvetica", "I", 8.5)
+    pdf.cell(0, 4.5, sanitizar_texto_latin1("Data: Setembro / 2026 | Licença: MIT"), 0, 1, 'C')
+    pdf.ln(3)
+
+    # Bloco dos Integrantes (referência: relatorio_tecnico.md)
+    integrantes = obter_integrantes()
+    x_box = 10
+    y_box = pdf.get_y()
+    w_box = 190
+    h_box = 8 + (len(integrantes) * 5)
+
+    pdf.set_fill_color(248, 250, 252)
+    pdf.set_draw_color(203, 213, 225)
+    pdf.rect(x_box, y_box, w_box, h_box, 'DF')
+
+    pdf.set_xy(x_box + 4, y_box + 2.5)
+    pdf.set_font("Helvetica", "B", 9)
+    pdf.set_text_color(15, 23, 42)
+    pdf.cell(0, 4.5, sanitizar_texto_latin1("Integrantes:"), 0, 1, 'L')
+
+    for nome, tel, email in integrantes:
+        pdf.set_x(x_box + 6)
+        pdf.set_font("Helvetica", "", 8.5)
+        pdf.set_text_color(100, 116, 139)
+        pdf.cell(3.5, 4.5, chr(149), 0, 0, 'L')
+        pdf.set_font("Helvetica", "B", 8.5)
+        pdf.set_text_color(30, 41, 59)
+        pdf.cell(pdf.get_string_width(sanitizar_texto_latin1(nome)) + 1, 4.5, sanitizar_texto_latin1(nome), 0, 0, 'L')
+        pdf.set_font("Helvetica", "", 8.5)
+        pdf.set_text_color(71, 85, 105)
+        sep_tel = f" - {tel} - "
+        pdf.cell(pdf.get_string_width(sep_tel) + 1, 4.5, sep_tel, 0, 0, 'L')
+        pdf.set_text_color(2, 132, 199)
+        pdf.cell(pdf.get_string_width(email) + 1, 4.5, email, 0, 1, 'L', link=f"mailto:{email}")
+
+    pdf.set_y(y_box + h_box + 4)
 
     # 1. Objetivo e Visão Geral
     pdf.chapter_title(1, "Objetivo e Visão Geral da Solução")
@@ -215,6 +280,9 @@ def gerar_pdf_relatorio(caminho_saida: Path = RELATORIO_PDF) -> Path:
         "3) Coloque móveis e documentos importantes em locais elevados caso more em área rebaixada.\n"
         "4) Feche bem janelas, portas e claraboias antes do início da tempestade."
     )
+
+    if pdf.get_y() > 230:
+        pdf.add_page()
 
     pdf.sub_title("Cenário C: Geada Severa no Sul (Ramo Agro - SMS / E-mail)")
     pdf.code_box(
